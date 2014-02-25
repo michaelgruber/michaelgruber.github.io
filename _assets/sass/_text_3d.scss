@@ -1,0 +1,24 @@
+@mixin text_3d($color, $height, $min_height_gradient, $max_height_gradient, $density: 1) {
+  $height_gradient: $max_height_gradient - $min_height_gradient;
+
+  $iterations: $height * $density;
+
+  $shadow: 0 0px 0 $color;
+  @for $i from 1 through $iterations {
+    $i: $i / ($density * 1.0); // covers up bumpiness
+    $x: 0px + $i;
+    $y: 0px - $i;
+    $darken_by: $min_height_gradient + ($i / $iterations * $height_gradient * $density);
+
+    $shadow_color: darken($color, $darken_by);
+    $shadow: $shadow, + $x $y 0 $shadow_color;
+  }
+
+  color: $color;
+  text-shadow: $shadow;
+}
+
+h1.threeDee {
+  font-size: 128px;
+  @include text_3d(#d4daa8, 20, 12%, 30%);
+}
