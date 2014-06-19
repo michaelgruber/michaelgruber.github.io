@@ -79,7 +79,7 @@ a:hover {
 
       .about {
         img { float: left; }
-        p { 
+        p {
           display: block;
           padding-left: 74px;
           width: auto;
@@ -147,7 +147,6 @@ a:hover {
     margin: 0.25em 0;
     padding: 0;
 
-
     li {
       margin: 0;
       list-style: none;
@@ -173,7 +172,7 @@ a:hover {
   font-family: $sans;
   @include font-size(1.2);
   color: $base1;
-  border-bottom: 4px solid $mg_orange;
+  border-bottom: 0.4em solid $mg_orange;
   margin-top: 6em;
   padding-bottom: 2em;
   overflow: hidden;
@@ -202,7 +201,7 @@ a:hover {
 
     .twitter, .github {
       padding: 0;
-      img { width: 4em; }
+      img { width: 2.5em; }
     }
 
     .twitter img { @include border-radius(100%); }
@@ -237,13 +236,14 @@ a:hover {
   .post-title, .page-title {
     margin: 0;
     line-height: 100%;
-    @include font-size(4.8);
+    text-transform: uppercase;
+    @include font-size(3.0);
   }
 
   .post-subtitle {
     margin: 0;
     font-weight: normal;
-    @include font-size(2.4);
+    @include font-size(2.2);
     border: none;
   }
 
@@ -254,10 +254,39 @@ a:hover {
 }
 
 article.post {
-  img { 
+  img {
     float: right;
     max-width: 50%;
     margin: 0.5em 0 0.5em 0.5em;
+  }
+
+  .post-navigation {
+    text-align: center;
+    font-family: $sans;
+    text-decoration: none;
+    padding: 2em 0 0;
+    border-top: 1px dotted $base2;
+    position: relative;
+
+    a {
+      border: none;
+    }
+
+    .previous, .next {
+      position: absolute;
+    }
+
+    .previous {
+      right: 0;
+    }
+
+    .home {
+      text-transform: uppercase;
+    }
+
+    .next {
+      left: 0;
+    }
   }
 }
 
@@ -282,7 +311,7 @@ article.post {
       border-bottom: 1px dotted $base2;
       list-style: none;
 
-      a, a:hover, a:visited { 
+      a, a:hover, a:visited {
         border: none;
         color: $base01;
       }
