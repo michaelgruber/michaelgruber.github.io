@@ -1,7 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-gem 'github-pages'
-gem 'rake'
-
-gem 'sass'
+gem 'jekyll',       '~> 2.4.0'
+gem 'github-pages', '~> 28'

@@ -1,5 +1,15 @@
-name: Michael Gruber
-markdown: redcarpet
-pygments: true
-exclude: [README.md, Gemfile, Gemfile.lock, Rakefile]
+# Site settings
+title: Michael Gruber
+email: mail@michaelgruber.me
+description: ""
+baseurl: ""
+url: "http://blog.michaelgruber.me"
+
+# Build settings
+exclude: [README.md, Gemfile, Gemfile.lock]
+markdown: kramdown
 paginate: 5
+permalink: pretty
+sass:
+  sass_dir: _sass
+  style: :compressed

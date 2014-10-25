@@ -1,37 +1,46 @@
 ---
 layout: default
 ---
-<article class="post">
+<div class="post">
+
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
+
     {% if page.subtitle %}
-      <h2 class="post-subtitle">{{ page.subtitle }}</h2>
+      <h2>{{ page.subtitle }}</h2>
     {% endif %}
+
     <time class="post-date" datetime="{{ page.date | date: "%m-%d-%Y" }}">{{ page.date | date: "%B %-d, %Y" }}</time>
   </header>
 
+  <article class="post-content">
   {{ content }}
+  </article>
 
   <footer class="post-navigation">
 
     {% if page.next.url %}
+
       <span class="next">
         <a href="{{page.next.url}}" title="{{page.next.title}}">
           <span>&#9664;</span> {{page.next.title | truncate:20 }}
         </a>
       </span>
+
     {% endif %}
 
     <span class="home"><a href="/" title="Home">Home</a></span>
 
     {% if page.previous.url %}
+
       <span class="previous">
         <a href="{{page.previous.url}}" title="{{page.previous.title}}">
           {{page.previous.title | truncate:20}} <span>&#9658;</span>
         </a>
       </span>
+
     {% endif %}
 
   </footer>
 
-</article>
+</div>
